@@ -17,10 +17,15 @@ export interface ImageCardProps {
   style?: StyleProp<ViewStyle>;
 }
 
-export function ImageCard({ image, title, height = 150, onPress, style }: ImageCardProps) {
+export function ImageCard({ image, title, height, onPress, style }: ImageCardProps) {
   return (
-    <Pressable onPress={onPress} style={[styles.card, { height }, style]}>
-      <ImageBackground source={image} style={styles.image} imageStyle={styles.imageRadius}>
+    <Pressable onPress={onPress} style={[styles.card, height ? { height } : null, style]}>
+      <ImageBackground
+        source={image}
+        style={styles.image}
+        imageStyle={styles.imageRadius}
+        resizeMode="cover"
+      >
         {title ? <Text style={styles.title}>{title}</Text> : null}
       </ImageBackground>
     </Pressable>

@@ -2,12 +2,12 @@ import { useState } from 'react';
 import {
   Image,
   Pressable,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button, Input, ScreenHeader } from '../../components';
 import { colors, fontSize, spacing } from '../../theme';
 

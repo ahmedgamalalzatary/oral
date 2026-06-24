@@ -1,4 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ImageCard } from '../../components';
@@ -9,10 +10,21 @@ const CANCER = require('../../assets/Frame 5.png');
 const ULCERS = require('../../assets/Frame 6.png');
 
 export default function Home() {
+  const router = useRouter();
+  const handleBack = () => (router.canGoBack() ? router.back() : router.replace('/login'));
+
   return (
     <SafeAreaView style={styles.screen} edges={['top']}>
       <View style={styles.header}>
-        <View>
+        <Pressable
+          onPress={handleBack}
+          style={styles.backBtn}
+          accessibilityRole="button"
+          accessibilityLabel="Go back"
+        >
+          <Ionicons name="chevron-back" size={20} color={colors.textDark} />
+        </Pressable>
+        <View style={styles.headerText}>
           <Text style={styles.welcome}>Welcome</Text>
           <Text style={styles.name}>Mohamed</Text>
         </View>
@@ -45,6 +57,19 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: spacing.md,
   },
+  backBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: colors.border,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  headerText: {
+    flex: 1,
+    marginLeft: spacing.md,
+  },
   welcome: {
     fontSize: fontSize.body,
     color: colors.placeholder,
@@ -67,6 +92,7 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.lg,
   },
   card: {
-    flex: 1,
+    width: '100%',
+    aspectRatio: 722 / 384,
   },
 });

@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   Image,
   SafeAreaView,
@@ -43,21 +43,9 @@ export default function Onboarding() {
     if (next !== index) setIndex(next);
   };
 
-  // Auto-advance one slide per second; after the last slide, go to Welcome.
-  useEffect(() => {
-    const t = setTimeout(() => {
-      if (isLast) {
-        router.replace('/welcome');
-      } else {
-        scrollRef.current?.scrollTo({ x: (index + 1) * slideWidth, animated: true });
-      }
-    }, 1000);
-    return () => clearTimeout(t);
-  }, [index, isLast, slideWidth]);
-
   const handleNext = () => {
     if (isLast) {
-      router.replace('/(tabs)/home');
+      router.replace('/welcome');
     } else {
       scrollRef.current?.scrollTo({ x: (index + 1) * slideWidth, animated: true });
     }

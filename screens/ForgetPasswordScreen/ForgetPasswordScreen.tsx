@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button, OptionCard, ScreenHeader } from '../../components';
 import { colors, fontSize, spacing } from '../../theme';
 

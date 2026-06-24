@@ -5,6 +5,7 @@ export default function Welcome() {
   const router = useRouter();
   return (
     <WelcomeScreen
+      onBack={() => (router.canGoBack() ? router.back() : router.replace('/onboarding'))}
       onLogin={() => router.push('/login')}
       onSignup={() => router.push('/signup')}
     />
