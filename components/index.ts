@@ -27,3 +27,6 @@ export type { OptionCardProps } from './OptionCard/OptionCard';
 
 export { OtpInput } from './OtpInput/OtpInput';
 export type { OtpInputProps } from './OtpInput/OtpInput';
+
+export { ImageCard } from './ImageCard/ImageCard';
+export type { ImageCardProps } from './ImageCard/ImageCard';
