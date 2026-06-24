@@ -4,7 +4,12 @@ import { colors, spacing } from '../../theme';
 
 const LOGO = require('../../assets/Frame 4.png');
 
-export function WelcomeScreen() {
+export interface WelcomeScreenProps {
+  onLogin?: () => void;
+  onSignup?: () => void;
+}
+
+export function WelcomeScreen({ onLogin, onSignup }: WelcomeScreenProps) {
   return (
     <SafeAreaView style={styles.screen}>
       <View style={styles.logoWrap}>
@@ -12,9 +17,8 @@ export function WelcomeScreen() {
       </View>
 
       <View style={styles.actions}>
-        {/* TODO: wire to /login and /signup once those screens exist. */}
-        <Button label="Login" onPress={() => {}} />
-        <Button label="Sign up" variant="outline" onPress={() => {}} />
+        <Button label="Login" onPress={onLogin} />
+        <Button label="Sign up" variant="outline" onPress={onSignup} />
       </View>
     </SafeAreaView>
   );

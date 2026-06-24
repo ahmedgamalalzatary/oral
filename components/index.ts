@@ -21,3 +21,9 @@ export type { DividerProps } from './Divider/Divider';
 
 export { ScreenHeader } from './ScreenHeader/ScreenHeader';
 export type { ScreenHeaderProps } from './ScreenHeader/ScreenHeader';
+
+export { OptionCard } from './OptionCard/OptionCard';
+export type { OptionCardProps } from './OptionCard/OptionCard';
+
+export { OtpInput } from './OtpInput/OtpInput';
+export type { OtpInputProps } from './OtpInput/OtpInput';
