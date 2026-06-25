@@ -98,8 +98,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     borderRadius: radius.lg,
-    borderWidth: 2,
-    borderColor: colors.secondary,
   },
   pagination: {
     marginVertical: spacing.xl,

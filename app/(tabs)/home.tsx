@@ -37,9 +37,21 @@ export default function Home() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        <ImageCard image={NORMAL} style={styles.card} />
-        <ImageCard image={CANCER} style={styles.card} />
-        <ImageCard image={ULCERS} style={styles.card} />
+        <ImageCard
+          image={NORMAL}
+          style={styles.card}
+          onPress={() => router.push('/(tabs)/normal')}
+        />
+        <ImageCard
+          image={CANCER}
+          style={styles.card}
+          onPress={() => router.push('/(tabs)/possibility-cancer')}
+        />
+        <ImageCard
+          image={ULCERS}
+          style={styles.card}
+          onPress={() => router.push('/(tabs)/oral')}
+        />
       </ScrollView>
     </SafeAreaView>
   );

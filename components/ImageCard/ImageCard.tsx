@@ -23,7 +23,7 @@ export function ImageCard({ image, title, height, onPress, style }: ImageCardPro
       <ImageBackground
         source={image}
         style={styles.image}
-        imageStyle={styles.imageRadius}
+        imageStyle={styles.imageInner}
         resizeMode="cover"
       >
         {title ? <Text style={styles.title}>{title}</Text> : null}
@@ -42,8 +42,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     padding: spacing.md,
   },
-  imageRadius: {
+  // Scale the bitmap up slightly so each asset's baked-in (and inconsistent)
+  // rounded/transparent corners are cropped off by the card's clip, leaving the
+  // card's own borderRadius as the only visible rounding on all four corners.
+  imageInner: {
     borderRadius: radius.md,
+    transform: [{ scale: 1.07 }],
   },
   title: {
     color: colors.white,
